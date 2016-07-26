@@ -1,0 +1,25 @@
+train_net: "models/resnet_50/train.prototxt"  #modify this to your train and test paths
+test_net: "models/resnet_50/test.prototxt"
+test_iter: 0
+test_interval: 60000
+base_lr: 0.001
+display: 10
+max_iter: 60000
+lr_policy: "multistep"
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+stepvalue: 40000
+snapshot: 500
+snapshot_prefix: "resnet_50/snapshot/detect_snapshot"
+solver_mode: GPU
+device_id: 0
+debug_info: false
+snapshot_after_train: true
+test_initialization: false
+average_loss: 10
+iter_size: 1
+type: "SGD"
+eval_type: "detection"
+ap_version: "11point"
+

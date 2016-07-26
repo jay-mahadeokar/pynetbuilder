@@ -1,0 +1,25 @@
+train_net: "models/resnet_50/train.prototxt"
+test_net: "models/resnet_50/test.prototxt"
+test_iter: 619
+test_interval: 10000
+base_lr: 0.001
+display: 10
+max_iter: 0
+lr_policy: "step"
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+stepsize: 40000
+snapshot: 0
+snapshot_prefix: "models/resnet_50/snapshot/detect_snapshot"
+solver_mode: GPU
+device_id: 0
+debug_info: false
+snapshot_after_train: false
+test_initialization: true
+average_loss: 10
+iter_size: 1
+type: "SGD"
+eval_type: "detection"
+ap_version: "11point"
+
