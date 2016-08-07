@@ -67,11 +67,11 @@ The training strategy is very similar to what is used in paper. It took ~5 days 
 ***Note***: The accuracy is the top-1 center crop accuracy on imagenet validation dataset.
 
 ##### Basic residual network results
-| Model | Accuracy | #Flops | #Params | Description|
-|---:|---:|---:|---:|---:|
-|Resnet 50|0.7175|3858.02|25.55| Original resnet 50 as in paper|
-|Resnet 50 1by2|0.6679|1069.59|6.92| Similar to resnet 50 blocks:[3,4,6,3] all layers have half filters except conv1|
-|resnet 77 1by2|69.84|1560.93|9.44| blocks:[3,4,15,3] with half filters|
+| Model | Accuracy | #Flops | #Params | Description| |
+|---:|---:|---:|---:|---:|---:|
+|Resnet 50|0.7175|3858.02|25.55| Original resnet 50 as in paper|[Download](https://www.dropbox.com/s/k382wr2bzi59m4c/resnet_50.caffemodel?dl=0)|
+|Resnet 50 1by2|0.6679|1069.59|6.92| Similar to resnet 50 blocks:[3,4,6,3] all layers have half filters except conv1|[Download](https://www.dropbox.com/s/2ojd4mwzwset9qo/resnet_50_1by2.caffemodel?dl=0)|
+|resnet 77 1by2|69.84|1560.93|9.44| blocks:[3,4,15,3] with half filters|[Download](https://www.dropbox.com/sh/r5jg3wsdgap7ulg/AAB5yHpTGAt8Thod0Rd0T000a?dl=0)|
 
 ##### Plots
  * Following plot shows the training loss and center crop top 1 validation loss vs iterations. (Please refer to the model folders for plots for specific models). Note that there is slight overfitting when LR is 0.01 (between iters 150k to 300k). If scale augmentation is not used, the overfitting is sharper, and the performance degrades.
@@ -92,10 +92,10 @@ The Fully connected stage we use is a combination of 2048 1by1 Conv + Avg pool +
 ##### Smaller model with good performance
 We can distribute parameters over network in different ways. Using below architecture where we add FC layer as described above after the residual network stages we achieve 70.76% top 1 center crop accuracy, and has compute time less than GoogleNet (only using scale augmentation and training disclaimers mentioned above) 
 
-| Model | Accuracy | #Flops | #Params | Description|
-|---:|---:|---:|---:|---:|
-|resnet 34 inception trick|0.678|1370.93|8.55| Similar to resnet 18 in paper blocks:[2,2,2,2], 3x3 blocks replaced with inception trick, so 1 block has 4 layers|
-|resnet 36 with4k inception trick|0.7076|1434.30|21.58| Similar to resnet 18 in paper, 3x3 blocks replaced with inception trick, added FC stage as described above|
+| Model | Accuracy | #Flops | #Params | Description||
+|---:|---:|---:|---:|---:|---:|
+|resnet 34 inception trick|0.678|1370.93|8.55| Similar to resnet 18 in paper blocks:[2,2,2,2], 3x3 blocks replaced with inception trick, so 1 block has 4 layers||
+|resnet 36 with4k inception trick|0.7076|1434.30|21.58| Similar to resnet 18 in paper, 3x3 blocks replaced with inception trick, added FC stage as described above|[Download](https://www.dropbox.com/s/79d3w6ylnqbzz3o/resnet_36_with4k_inceptiontrick.caffemodel?dl=0)|
 
  
  
