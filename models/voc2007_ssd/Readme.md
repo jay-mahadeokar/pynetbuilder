@@ -100,6 +100,8 @@ Below table shows the network statistics and mAP for VGG and resnet 50 detection
 |VGG (SSD paper)|26.06|31207.75|72.1|
 |resnet_50|71.47|9178.43|70.4|
 
+You can download the resnet 50 + ssd caffemodel [here](https://www.dropbox.com/s/en1niufn7nagh27/detect_snapshot_iter_60000.caffemodel?dl=0). 
+
 #### Building other detection networks
 You are welcome to use ssd legos for building your own SSD based detection networks. If you have your own architecture, you can build the network as follows:
  * Create a class in ```netbuilder.nets.imagenet``` which will return your core network.
