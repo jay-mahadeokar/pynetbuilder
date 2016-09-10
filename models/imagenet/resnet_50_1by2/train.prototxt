@@ -1,4 +1,4 @@
-name: "Resnet_77_1by2"
+name: "Resnet_50_1by2"
 # Note - replace below layer with your data layer
 layer {
   name: "data"
